@@ -51,6 +51,7 @@ An example of how the program should run is provided below, the quotation marks 
 from the user.
 
 
+
 Enter the path of corpus (include file extension): "corpus.txt"
 Enter the path to your pretrained model (Leave blank if none): "model.h5"
 
