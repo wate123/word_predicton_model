@@ -1,3 +1,5 @@
+Authors: Jun Lin, Samantha Hardy
+
 In this project, we implemented a word prediction AI which will read lines of a given prompt and
 can predict the an alloted number of words that are after the inputed value. Running the program
 requires the user to download python3, tensorflow, and keras prior to opening it in any given 
