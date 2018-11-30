@@ -15,7 +15,7 @@ model_path = input("Enter the path to your pretrained model (Leave blank if none
 valid = {"yes": True, "y": True, "ye": True,
              "no": False, "n": False}
 model = Sequential()
-train = Training(file_path)
+train = Training(str(file_path))
 try:
     model = models.load_model(model_path)
 except ValueError:
@@ -28,14 +28,14 @@ except ValueError:
         sys.exit()
 print()
 seed_words = input("Enter your input: ")
-num_words = int(input("Enter number of words to predict: "))   
+num_words = int(input("Enter number of words to predict: "))
 print()
 result = train.generate_seq(model, seed_words, num_words)
 print(result)
 print()
 print("(Hint) Type /c to change number of words to predict")
 print("To quit, type /q")
-print() 
+print()
 if seed_words == "/c":
     num_words = int(input("Enter number of words to predict: "))
 elif seed_words == "/q":
@@ -44,7 +44,7 @@ while seed_words != "":
     seed_words = input("You: ")
     if seed_words == "/c":
         num_words = int(input("Enter number of words to predict: "))
-        continue 
+        continue
     elif seed_words == "/q":
         break
     result = train.generate_seq(model, seed_words, num_words)

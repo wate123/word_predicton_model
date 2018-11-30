@@ -17,8 +17,8 @@ class Training:
 		self.y = 0
 		self.tokenizer = Tokenizer()
 		self.data_preprocess()
-		
-	
+
+
 	def data_preprocess(self):
 		# corpus
 		with open(self.corpus_path) as f:
@@ -53,7 +53,7 @@ class Training:
 			# pre-pad sequences to a fixed length
 			encoded = pad_sequences([encoded], maxlen=self.max_length-1, padding='pre')
 			# predict probabilities for each word
-			
+
 			yhat = model.predict_classes(encoded, verbose=0)
 			# map predicted word index to word
 			out_word = ''
@@ -74,8 +74,5 @@ class Training:
 		# compile network
 		model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 		# fit network
-		model.fit(self.X, self.y, epochs=500, verbose=2)
+		model.fit(self.X, self.y, epochs=700, verbose=2)
 		return model
-
-
-
